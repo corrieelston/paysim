@@ -5,12 +5,12 @@ from google.cloud import pubsub_v1
 PROJECT = os.environ['PROJECT']
 
 FILENAMES = [
-  'paysim_26',
-  'paysim_27',
-  'paysim_28',
-  'paysim_29',
-  'paysim_30',
-  'paysim_31'
+  '../streaming/paysim_26',
+  '../streaming/paysim_27',
+  '../streaming/paysim_28',
+  '../streaming/paysim_29',
+  '../streaming/paysim_30',
+  '../streaming/paysim_31'
 ]
 
 publisher = pubsub_v1.PublisherClient()
