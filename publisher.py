@@ -1,5 +1,8 @@
+import os
 import time
 from google.cloud import pubsub_v1
+
+PROJECT = os.environ['PROJECT']
 
 FILENAMES = [
   'paysim_26',
@@ -11,7 +14,7 @@ FILENAMES = [
 ]
 
 publisher = pubsub_v1.PublisherClient()
-topic_path = publisher.topic_path('invesco-fraud-investigation', 'paysim-topic-1')
+topic_path = publisher.topic_path(PROJECT, 'paysim-topic-1')
 
 for filename in FILENAMES:
   print filename

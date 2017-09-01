@@ -1,9 +1,12 @@
+import os
 import time
 from google.cloud import pubsub_v1
 from google.cloud import bigquery
 
+PROJECT = os.environ['PROJECT']
+
 subscriber = pubsub_v1.SubscriberClient()
-subscription_path = subscriber.subscription_path('invesco-fraud-investigation', 'paysim-subscription-1')
+subscription_path = subscriber.subscription_path(PROJECT, 'paysim-subscription-1')
 
 bigquery_client = bigquery.Client()
 dataset = bigquery_client.dataset('paysim')
